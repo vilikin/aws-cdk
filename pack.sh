@@ -38,8 +38,8 @@ function lerna_scopes() {
 
 # Compile examples with respect to "decdk" directory, as all packages will
 # be symlinked there so they can all be included.
-echo "Extracting code samples" >&2
-node --experimental-worker $(which $ROSETTA) \
+echo "Extracting code samples (single-threaded)" >&2
+node $(which $ROSETTA) \
   --compile \
   --output samples.tabl.json \
   --directory packages/decdk \
